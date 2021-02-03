@@ -8,6 +8,6 @@ int main(void)
 
 /* This prints out the string in parenthesis */
 
-	puts(""Programming is like building a multilingual puzzle");
+	puts("\"Programming is like building a multilingual puzzle");
 	return (0);
 }
