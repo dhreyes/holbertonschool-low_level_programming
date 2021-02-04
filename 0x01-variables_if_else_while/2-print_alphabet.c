@@ -9,7 +9,7 @@ int main(void)
 	int i;
 	char a[27];
 
-	for (i=0; i<27; i++)
+	for (i=0; i<26; i++)
 	{
 		a[i] = 'a' + i;
 		putchar (a[i]);
