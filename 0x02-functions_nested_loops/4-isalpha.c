@@ -1,5 +1,6 @@
 /**
- * main - islower for upper cases
+ * _isalpha - islower for upper cases
+ * @c: a letter upper/lower
  * Return: 1 if c is uppercase, else 0
  */
 int _isalpha(int c)
