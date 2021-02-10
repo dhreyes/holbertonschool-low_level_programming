@@ -1,4 +1,4 @@
-nclude "holberton.h"
+#include "holberton.h"
 /**
  *print_times_table - prints the n times table for 0 < n < 16
  *@n: the last table to print starting with 0 ending inm 'n'
