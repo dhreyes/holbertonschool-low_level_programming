@@ -8,7 +8,7 @@ void print_to_98(int n)
 {
 	int i = 1;
 
-	if (n < 98)
+	if (n > 98)
 		i = -1;
 	printf("%i", n);
 	if (n != 98)
