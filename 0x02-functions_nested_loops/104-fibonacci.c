@@ -6,31 +6,31 @@
  */
 int main(void)
 {
-	unsigned long p_f1 = 0, s_f1 = 1, p_f2 = 0, s_f2 = 2;
-	unsigned long p_next = 0, s_next = 0;
+	unsigned long x_f1 = 0, y_f1 = 1, x_f2 = 0, y_f2 = 2;
+	unsigned long x_next = 0, y_next = 0;
 	unsigned long scale = 1000000000;
 	int n = 3;
 
 	printf("1, 2, ");
 	while (n <= 98)
 	{
-		p_next = (s_f1 + s_f2) / scale;
-		p_next += (p_f1 + p_f2);
-		s_next = (s_f1 + s_f2) % scale;
+		x_next = (y_f1 + y_f2) / scale;
+		x_next += (x_f1 + x_f2);
+		y_next = (y_f1 + y_f2) % scale;
 
-		p_f1 = p_f2;
-		s_f1 = s_f2;
+		x_f1 = x_f2;
+		y_f1 = y_f2;
 
 
-		p_f2 = p_next;
-		s_f2 = s_next;
-		if (p_next > 0)
+		x_f2 = x_next;
+		y_f2 = y_next;
+		if (x_next > 0)
 		{
-			printf("%lu", p_next);
-			printf("%09lu", s_next);
+			printf("%lu", x_next);
+			printf("%09lu", y_next);
 		}
 		else
-			printf("%lu", s_next);
+			printf("%lu", y_next);
 		if (n < 98)
 			printf(", ");
 		n++;
