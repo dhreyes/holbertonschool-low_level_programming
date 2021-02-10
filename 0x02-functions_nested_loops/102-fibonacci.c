@@ -19,7 +19,7 @@ int main(void)
 		r = f1 + f2;
 		f1 = f2;
 		f2 = r;
-		printf("%ld", next);
+		printf("%ld", r);
 		if (count < flimit)
 			printf(", ");
 	}
