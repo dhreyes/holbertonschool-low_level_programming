@@ -1,39 +1,48 @@
-#include "holberton.h"
+nclude "holberton.h"
 /**
- * print_times_table - print muliplication tables 0 - 9
- * @n: number for table
- *
+ *print_times_table - prints the n times table for 0 < n < 16
+ *@n: the last table to print starting with 0 ending inm 'n'
  */
 void print_times_table(int n)
 {
-	int x, y, r;
-
 	if (n >= 0 && n <= 15)
 	{
-		for (y = 0; y <= n; y++)
+	int i, ii, num;
+
+	for (i = 0; i <= n; i++)
+	{
+		for (ii = 0; ii <= n; ii++)
 		{
-			for (x = 0; x <= n; x++)
+			num = i * ii;
+			if (num > 99)
 			{
-				r = y * x;
-				if (x != 0)
-				{
-					_putchar(',');
-					_putchar(' ');
-				}
-				if ((r < 10) && (x != 0))
-					_putchar(' ');
-				if ((r < 100) && (x != 0))
-					_putchar(' ');
-				if ((r >= 100) && (r > 10))
-				{
-					_putchar((r / 100) + '0');
-					_putchar(((r / 10) % 10) + '0');
-				}
-				else if (r >= 10)
-					_putchar((r / 10) + '0');
-				_putchar((r % 10) + '0');
+				_putchar(',');
+				_putchar(' ');
+				_putchar(num / 100 + '0');
+				num = num - (num / 100) * 100;
+				_putchar((num / 10) + '0');
+				_putchar((num % 10) + '0');
 			}
-			_putchar('\n');
+			else if (num > 9)
+			{
+				_putchar(',');
+				_putchar(' ');
+				_putchar(' ');
+				_putchar((num / 10) + '0');
+				_putchar((num % 10) + '0');
+			}
+			else if (ii != 0)
+			{
+				_putchar(',');
+				_putchar(' ');
+				_putchar(' ');
+				_putchar(' ');
+				_putchar(num + '0');
+			}
+			else
+				_putchar('0');
 		}
+		_putchar('\n');
+	}
 	}
 }
