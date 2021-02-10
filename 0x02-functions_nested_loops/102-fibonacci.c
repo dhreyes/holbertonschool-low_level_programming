@@ -16,7 +16,7 @@ int main(void)
 	printf("1, 2, ");
 	for (count = 3; count <= flimit; count++)
 	{
-		next = f1 + f2;
+		r = f1 + f2;
 		f1 = f2;
 		f2 = r;
 		printf("%ld", next);
