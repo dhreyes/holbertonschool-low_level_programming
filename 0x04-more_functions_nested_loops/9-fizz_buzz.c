@@ -13,10 +13,13 @@ int main(void)
 		if ((i % 3 != 0) && (i % 5 != 0))
 			printf("%d", i);
 		else
+		{
 			if (i % 3 == 0)
 				printf("%s", "Fizz");
 			if (i % 5 == 0)
 				printf("%s", "Buzz");
+		}
+		if (i != 100)
 			printf(" ");
 		i++;
 	}
