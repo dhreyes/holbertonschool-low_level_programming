@@ -4,7 +4,7 @@
  *@n: number of times \ should be printed
  *Return: Always 0 (success)
  */
-void print_diagonal(int n);
+void print_diagonal(int n)
 {
 	int i, space;
 
@@ -12,7 +12,7 @@ void print_diagonal(int n);
 	{
 		for (i = 0; i < n; i++)
 		{
-			for (space = 0; space < 1; space++)
+			for (space = 0; space < i; space++)
 				_putchar(' ');
 			_putchar('\\');
 			_putchar('\n');
