@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- *mul(int a, int b);
+ *mul - multiplies the input
  *@a: first digit
  *@b: second digit
  *Return: result of multiplication
