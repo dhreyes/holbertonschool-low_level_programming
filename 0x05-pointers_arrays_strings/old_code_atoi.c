@@ -1,21 +1,20 @@
 #include "holberton.h"
-int num_find(char *s, int *end, int *begin);
+void num_find(char *s, int *end, int *begin);
 int power(int base, int exp);
 /**
  *_atoi - will function as command atoi
  *@s: string input
+ *Return: value of rr
  */
 int _atoi(char *s)
 {
 	int result, end, begin, d, cn2, n, rr, sign;
-	
 
 	result = 0;
 	sign = 1;
 	num_find(s, &end, &begin);
 	d = end - begin;
 	cn2 = begin;
-	
 	while (cn2 <= end)
 	{
 		if (s[cn2] == '-')
@@ -25,7 +24,7 @@ int _atoi(char *s)
 		else if ((s[cn2] >= '0') && (s[cn2] <= '9'))
 		{
 			n = (s[cn2] - '0');
-			result = result + (power(10,d) * n);
+			result = result + (power(10, d) * n);
 		}
 		cn2++;
 		d--;
@@ -34,13 +33,13 @@ int _atoi(char *s)
 	return (rr);
 }
 /**
- *
- *
- *
- *
- *
+ *num_find - finds the numbers in a string
+ *@s: string input
+ *@end: end
+ *@begin: beginning
+ *Return: 0 if nothing, else numbers
  */
-int num_find(char *s, int *end, int *begin)
+void num_find(char *s, int *end, int *begin)
 {
 	int count;
 
@@ -61,16 +60,19 @@ int num_find(char *s, int *end, int *begin)
 		count++;
 	}
 }
-
-int power(int base, int exp) 
+/**
+ *power - allows use of exponents
+ *@base: base of exp
+ *@exp: exp of exp
+ *Return: result of exponents
+ */
+int power(int base, int exp)
 {
+	int temp = power(base, exp / 2);
 	if (exp == 0)
-		return 1;
-    else if (exp % 2)
-		return base * power(base, exp - 1);
-    else
-	{
-		int temp = power(base, exp / 2);
-		return temp * temp;
-	}
+		return (1);
+	else if (exp % 2)
+		return (base * power(base, exp - 1));
+
+		return (temp * temp);
 }
