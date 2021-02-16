@@ -1,3 +1,4 @@
+#include <stdio.h>
 /**
  * *_strcpy - Copy given string
  * @dest: Location for copy
@@ -13,5 +14,6 @@ char *_strcpy(char *dest, char *src)
 		dest[i] = src[i];
 		i++;
 	}
+	dest[i] = *(dest + i + 1);
 	return (dest);
 }
