@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * *_strncat - concatenates 
+ * *_strncat - concatenates
  * @dest: first string waiting for attachment
  * @src: string to be attached
  * @n: n bytes
