@@ -1,3 +1,4 @@
+#include "holberton.h"
 /**
  * *_strcat - concatenates 
  * @dest: first string waiting for attachment

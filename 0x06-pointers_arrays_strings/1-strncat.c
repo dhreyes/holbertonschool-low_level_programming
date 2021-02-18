@@ -6,7 +6,6 @@
  * @n: n bytes
  * Return: Always 0 (Success)
  */
-int _strlen(char *str);
 char *_strncat(char *dest, char *src, int n)
 {
 	int count = 0;
