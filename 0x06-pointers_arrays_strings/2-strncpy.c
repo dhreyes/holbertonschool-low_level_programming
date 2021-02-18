@@ -1,22 +1,28 @@
 #include "holberton.h"
 /**
- * *_strncat - concatenates
+ * *_strncpy - copies a string
  * @dest: first string waiting for attachment
  * @src: string to be attached
  * @n: n bytes
  * Return: Always 0 (Success)
  */
-char *_strncat(char *dest, char *src, int n)
+char *_strncpy(char *dest, char *src, int n)
 {
-	int count = 0;
-	int i = _strlen(dest);
+	int i = 0;
+	int j = 0;
 
-	while (count < n && src[count] != '\0')
+	while (j < n && src[j] != '\0')
 	{
-		dest[i] = src[count];
+		dest[i] = src[j];
 		i++;
-		count++;
+		j++;
 	}
+	while (i < n)
+	{
+	dest[i] = '\0';
+	i++;
+	}
+
 	return (dest);
 }
 /**
