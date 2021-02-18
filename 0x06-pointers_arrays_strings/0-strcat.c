@@ -1,13 +1,13 @@
 #include "holberton.h"
 /**
- * *_strcat - concatenates 
+ * *_strcat - concatenates
  * @dest: first string waiting for attachment
  * @src: string to be attached
  * Return: Always 0 (Success)
  */
 char *_strcat(char *dest, char *src)
 {
-	char* ptr = dest + _strlen(dest);
+	char *ptr = dest + _strlen(dest);
 
 	while (*src != '\0')
 		*ptr++ = *src++;
