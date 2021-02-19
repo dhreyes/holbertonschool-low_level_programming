@@ -1,3 +1,19 @@
+#include "holberton.h"
+
+/**
+* _strlen - calculate string length
+* @a: pointer to a string
+* Return: lenght of string
+**/
+int _strlen(char *a)
+{
+	int i = 0;
+
+	while (*a != '\0')
+		i++, a++;
+	return (i);
+}
+
 /**
  * infinite_add - Add up two numbers stored in given char arrays
  * @n1: The first number
@@ -9,34 +25,40 @@
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int i, j, temp, remainder, one, two;
+	int k, n2_s, n1_s, m;
 
-	i = j = 0;
-	while (n1[i] != '\0')
-		i++;
-	while (n2[j] != '\0')
-		j++;
-	while (size_r != 0 && i != 0 && j != 0)
+	r[size_r] = '\0';
+	k = 0;
+	m = 0;
+	n1_s = _strlen(n1);
+	n2_s = _strlen(n2);
+	size_r--;
+	if (n1_s > size_r || n2_s > size_r || size_r == 0 ||
+	    (n1_s == size_r && n2_s == size_r &&
+	     (n1[0] - '0') + (n2[0] - '0') > 9))
 	{
-		if (n1[0] == '-')
-			one = (n1[i] - '0');
-		else
-			one = (n1[i] - '0') * -1;
-		if (n2[0] == '-')
-			two = (n1[i] - '0');
-		else
-			two = (n1[i] - '0') * -1;
-
-		temp = one + two + remainder;
-		if (temp > 9)
-		{
-			remainder = temp / 10;
-			temp %= 10;
-		}
-		r[size_r--] = temp;
-		printf("%d\n", r[size_r + 1]);
-		i--;
-		j--;
+		return (0);
 	}
-		return (r[0]);
+	n1_s--;
+	n2_s--;
+	while (n1_s >= 0 || n2_s >= 0)
+	{
+		if (n1_s < 0)
+			m = n2[n2_s] - '0' + k;
+		else if (n2_s < 0)
+			m = n1[n1_s] - '0' + k;
+		else
+			m = (n1[n1_s] - '0') + (n2[n2_s] - '0') + k;
+		r[size_r] = (m % 10) + '0';
+		k = m / 10;
+		n1_s--, n2_s--, size_r--;
+	}
+	if (size_r > 0 && (k < 9 && k > 0))
+	{
+		r[size_r] = k + '0';
+		return (r + size_r);
+	}
+	else if (k == 0)
+		return (r + size_r);
+	return (0);
 }
