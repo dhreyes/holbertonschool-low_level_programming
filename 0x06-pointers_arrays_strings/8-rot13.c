@@ -1,3 +1,8 @@
+/**
+ * rot13 - translates to rot 13
+ * @str: input
+ * Return: string
+ */
 char *rot13(char *str)
 {
 	int indx1 = 0, indx2;
