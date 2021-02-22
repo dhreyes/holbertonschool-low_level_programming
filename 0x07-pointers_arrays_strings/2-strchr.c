@@ -1,8 +1,9 @@
 #include "holberton.h"
 /**
- *
- *
- *
+ * *_strchr - matches char with string
+ * @s: input string
+ * @c: character to match
+ * Return: null or char
  */
 char *_strchr(char *s, char c)
 {
