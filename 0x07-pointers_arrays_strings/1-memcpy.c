@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * *_memset - fills first n bytes pointed by s with b
+ * *_memcpy - copies n bytes of memory to new string
  * @dest: string copied to here
  * @src: string to copy
  * @n: copies n bytes
