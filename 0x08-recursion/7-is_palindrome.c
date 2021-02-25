@@ -32,7 +32,7 @@ int pal_check(char *c, int l)
 }
 /**
  * is_palindrome - Check if a string is a palindrome
- * @s: String to check
+ * @c: String to check
  * Return: 1 if palindrome, else 0
  */
 int is_palindrome(char *c)
