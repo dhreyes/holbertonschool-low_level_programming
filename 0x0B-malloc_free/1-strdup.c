@@ -1,12 +1,11 @@
 #include "holberton.h"
 #include <stdlib.h>
 /**
- * _strdup - returns a pointer to a new string which is a duplicate
- * of the string str.
+ * _strdup - returns pointer to new string duplicate
+ * of string str
  * @str: string to duplicate
- *
- * Return: On success, the _strdup function returns a pointer to the duplicated
- * string. It returns NULL if insufficient memory was available
+ * Return: On success, _strdup function returns pointer to duplicated
+ * string, returns NULL if insufficient memory was available
  */
 char *_strdup(char *str)
 {
@@ -20,7 +19,6 @@ char *_strdup(char *str)
 		;
 	}
 	dup = malloc((sizeof(char) * (len + 1)));
-	
 	if (dup == NULL)
 		return (NULL);
 
