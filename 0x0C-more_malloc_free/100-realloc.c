@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stdio.h>
+#include <stdlib.h>
 /**
  * _realloc - free up old space allocate new space
  *@ptr: ptr to return with new size
