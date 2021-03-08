@@ -1,9 +1,9 @@
 #include <stdio.h>
 /**
- * compilefrom - prints where it was compiled from
+ * main - prints where it was compiled from
  * Return: Always 0 (Success)
  */
-int compilefrom(void)
+int main(void)
 {
 	printf("%s\n", __FILE__);
 	return (0);
