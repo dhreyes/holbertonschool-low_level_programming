@@ -20,15 +20,12 @@ void print_all(const char * const format, ...)
 		{
 			case 'c':
 				printf("%s", sep1), printf("%c", va_arg(op, int));
-				sep1 = sep2;
 				break;
 			case 'i':
 				printf("%s", sep1), printf("%d", va_arg(op, int));
-				sep1 = sep2;
 				break;
 			case 'f':
 				printf("%s", sep1), printf("%f", va_arg(op, double));
-				sep1 = sep2;
 				break;
 			case 's':
 				s = va_arg(op, char *);
@@ -38,12 +35,12 @@ void print_all(const char * const format, ...)
 					break;
 				}
 				printf("%s", sep1), printf("%s", s);
-				sep1 = sep2;
 				break;
 			default:
 				idx++;
 				continue;
 		}
+		sep1 = sep2;
 		idx++;
 	}
 	printf("\n");
