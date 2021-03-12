@@ -14,7 +14,7 @@ void print_all(const char * const format, ...)
 	char *s, *sep1 = "", *sep2 = ", ";
 
 	va_start(op, format);
-	while (format[idx] != '\0' && (format))
+	while (format[idx] && (format))
 	{
 		switch (format[idx])
 		{
