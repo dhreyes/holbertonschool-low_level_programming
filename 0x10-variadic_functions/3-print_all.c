@@ -14,9 +14,9 @@ void print_all(const char * const format, ...)
 	char *s;
 
 	va_start(op, format);
-	while (*(format + idx) != '\0' && (format))
+	while (format[idx] != '\0' && (format))
 	{
-		switch (*(format + idx))
+		switch (format[idx])
 		{
 			case 'c':
 				printf("%c", va_arg(op, int));
@@ -36,8 +36,11 @@ void print_all(const char * const format, ...)
 				}
 				printf("%s", s);
 				break;
+			default:
+				idx++;
+				continue;
 		}
-		if (*(format + idx + 1) != '\0')
+		if (format[idx + 1] != '\0')
 			printf(", ");
 		idx++;
 	}
