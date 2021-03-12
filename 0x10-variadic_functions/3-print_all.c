@@ -36,9 +36,6 @@ void print_all(const char * const format, ...)
 				}
 				printf("%s", sep1), printf("%s", s);
 				break;
-			default:
-				idx++;
-				continue;
 		}
 		sep1 = sep2;
 		idx++;
