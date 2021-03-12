@@ -2,8 +2,9 @@
 #include <stdlib.h>
 /**
  * main - print opcodes of function
- *
- *
+ * @argc: number of args
+ * @argv: arg of number of bytes
+ * Return: Always 0 (Success)
  */
 int main(int argc, char *argv[])
 {
@@ -17,14 +18,14 @@ int main(int argc, char *argv[])
 		exit(1);
 	}
 
-	opc = (char*) &main;
-	bts = atoi(argv[1]);
-
-	if (bts < 0)
+	if (atoi(argv[1]) < 0)
 	{
 		printf("Error\n");
 		exit(2);
 	}
+
+	opc = (char*) &main;
+	bts = atoi(argv[1]);
 
 	i = 0;
 	while (i < bts)
