@@ -11,6 +11,7 @@ void print_all(const char * const format, ...)
 {
 	unsigned int idx = 0;
 	va_list op;
+	char *s;
 
 	va_start(op, format);
 	while (*(format + idx) != '\0' && (format))
@@ -27,12 +28,13 @@ void print_all(const char * const format, ...)
 				printf("%f", va_arg(op, double));
 				break;
 			case 's':
-				if (va_arg(op, char *) == NULL)
+				s = va_arg(op, char *);
+				if (s == NULL)
 				{
 					printf("(nil)");
 					break;
 				}
-				printf("%s", va_arg(op, char *));
+				printf("%s", s);
 				break;
 		}
 		idx++;
