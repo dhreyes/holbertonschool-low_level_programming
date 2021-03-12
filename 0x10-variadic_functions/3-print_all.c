@@ -37,6 +37,8 @@ void print_all(const char * const format, ...)
 				printf("%s", s);
 				break;
 		}
+		if (*(format + idx + 1) != '\0')
+			printf(", ");
 		idx++;
 	}
 	printf("\n");
