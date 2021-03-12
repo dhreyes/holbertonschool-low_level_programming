@@ -14,6 +14,11 @@ void print_all(const char * const format, ...)
 	char *s, *sep1 = "", *sep2 = ", ";
 
 	va_start(op, format);
+	if (format == NULL)
+	{
+		printf("\n");
+		return;
+	}
 	while (format[idx] != '\0')
 	{
 		switch (format[idx])
