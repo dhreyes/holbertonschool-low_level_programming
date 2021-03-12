@@ -11,32 +11,32 @@ void print_all(const char * const format, ...)
 {
 	unsigned int idx = 0;
 	va_list op;
-	char *s, *sep1 = "", *sep2 = ", ";
+	char *s, *sep1, *sep2;
+	sep1 = "";
+	sep2 = ", ";
 
 	va_start(op, format);
-	if (format == NULL)
-	{
-		printf("\n");
-		return;
-	}
-	while (format[idx] != '\0')
+	while (format[idx] != '\0' && format != NULL)
 	{
 		switch (format[idx])
 		{
 			case 'c':
-				printf("%s%c", sep1, va_arg(op, int));
+				printf("%s", sep1), printf("%c", va_arg(op, int));
 				break;
 			case 'i':
-				printf("%s%d", sep1, va_arg(op, int));
+				printf("%s", sep1), printf("%d", va_arg(op, int));
 				break;
 			case 'f':
-				printf("%s%f", sep1, va_arg(op, double));
+				printf("%s", sep1), printf("%f", va_arg(op, double));
 				break;
 			case 's':
 				s = va_arg(op, char *);
 				if (s == NULL)
-					s = "(nil)";
-				printf("%s%s", sep1, s);
+				{
+					printf("(nil)");
+					break;
+				}
+				printf("%s", sep1), printf("%s", s);
 				break;
 			default:
 				idx++;
