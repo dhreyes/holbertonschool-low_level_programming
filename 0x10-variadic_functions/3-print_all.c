@@ -11,10 +11,7 @@ void print_all(const char * const format, ...)
 {
 	unsigned int idx = 0;
 	va_list op;
-	char *s, *sep1, *sep2;
-
-	sep1 = "";
-	sep2 = ", ";
+	char *s, *sep1 = "", *sep2 = ", ";
 
 	va_start(op, format);
 	while (format[idx] != '\0' && (format))
@@ -43,6 +40,9 @@ void print_all(const char * const format, ...)
 				printf("%s", sep1), printf("%s", s);
 				sep1 = sep2;
 				break;
+			default:
+				idx++;
+				continue;
 		}
 		idx++;
 	}
