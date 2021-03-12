@@ -11,7 +11,9 @@ void print_all(const char * const format, ...)
 {
 	unsigned int idx = 0;
 	va_list op;
-	char *s;
+	char *s, *sep1, *sep2;
+	sep1 = "";
+	sep2 = ", ";
 
 	va_start(op, format);
 	while (format[idx] != '\0' && (format))
@@ -19,29 +21,25 @@ void print_all(const char * const format, ...)
 		switch (format[idx])
 		{
 			case 'c':
-				printf("%c", (char) va_arg(op, int));
+				printf("%s", sep1), printf("%c", va_arg(op, int));
 				break;
 			case 'i':
-				printf("%d", va_arg(op, int));
+				printf("%s", sep1), printf("%d", va_arg(op, int));
 				break;
 			case 'f':
-				printf("%f", (float) va_arg(op, double));
+				printf("%s", sep1), printf("%f", va_arg(op, double));
 				break;
 			case 's':
 				s = va_arg(op, char *);
 				if (s == NULL)
-				{
-					printf("(nil)");
-					break;
-				}
-				printf("%s", s);
+					s = "(nil)";
+				printf("%s", sep1), printf("%s", s);
 				break;
 			default:
 				idx++;
 				continue;
 		}
-		if (format[idx + 1] != '\0')
-			printf(", ");
+		sep1 = sep2;
 		idx++;
 	}
 	printf("\n");
