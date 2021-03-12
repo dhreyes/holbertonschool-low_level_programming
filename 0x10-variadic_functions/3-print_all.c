@@ -35,10 +35,7 @@ void print_all(const char * const format, ...)
 			case 's':
 				s = va_arg(op, char *);
 				if (s == NULL)
-				{
-					printf("(nil)");
-					break;
-				}
+					s = "(nil)";
 				printf("%s%s", sep1, s);
 				break;
 			default:
