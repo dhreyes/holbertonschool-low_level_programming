@@ -18,17 +18,17 @@ int main(int argc, char *argv[])
 		exit(1);
 	}
 
-	if (atoi(argv[1]) < 0)
+	opc = (char*) &main;
+	bts = atoi(argv[1]);
+
+	if (bts < 0)
 	{
 		printf("Error\n");
 		exit(2);
 	}
 
-	opc = (char*) &main;
-	bts = atoi(argv[1]);
-
 	i = 0;
-	while (i < bts)
+	while (i < bts - 1)
 	{
 		printf("%02hhx ", opc[i]);
 		i++;
