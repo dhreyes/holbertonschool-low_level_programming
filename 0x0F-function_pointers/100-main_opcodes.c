@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 		exit(1);
 	}
 
-	opc = (char*) &main;
+	opc = (char *) &main;
 	bts = atoi(argv[1]);
 
 	if (bts < 0)
