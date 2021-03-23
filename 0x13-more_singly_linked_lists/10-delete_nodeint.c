@@ -4,6 +4,7 @@
  * delete_nodeint_at_index - deletes node at index in listint_t
  * @head: head node
  * @index: index of listint_t
+ * Return: -1 if failure, 1 if success
  */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
