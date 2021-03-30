@@ -9,12 +9,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int opn, reed;
 	char *buff = malloc(sizeof(char) * letters);
-	unsigned int writ;
+	ssize_t writ;
 
 	if (filename == NULL || buff == NULL)
 	{
 		free(buff);
-		close(opn);
 		return (0);
 	}
 
