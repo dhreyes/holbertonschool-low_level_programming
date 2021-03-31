@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 		NRD;
 		exit(98);
 	}
-	opn2 = open(argv[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
+	opn2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (opn2 == -1)
 	{
 		NOWRITE;
