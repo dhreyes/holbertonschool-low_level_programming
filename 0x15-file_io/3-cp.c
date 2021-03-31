@@ -52,15 +52,20 @@ int main(int argc, char *argv[])
 		NRD;
 		exit(98);
 	}
-	while (reed > 0)
-	{
+	do {
 		writ = write(opn2, buff, reed);
 		if (writ != reed)
 		{
 			NOWRITE;
 			exit(99);
 		}
+		reed = read(opn1, buff, BUFSIZ);
+		if (reed == -1)
+		{
+			NRD;
+		exit(98);
 	}
+	} while (reed > 0);
 	cloes = close(opn1);
 	if (cloes == -1)
 	{
