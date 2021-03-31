@@ -52,7 +52,8 @@ int main(int argc, char *argv[])
 		NRD;
 		exit(98);
 	}
-	do {
+	while (reed > 0)
+	{
 		writ = write(opn2, buff, reed);
 		if (writ != reed)
 		{
@@ -63,9 +64,9 @@ int main(int argc, char *argv[])
 		if (reed == -1)
 		{
 			NRD;
-		exit(98);
+			exit(98);
+		}
 	}
-	} while (reed > 0);
 	cloes = close(opn1);
 	if (cloes == -1)
 	{
