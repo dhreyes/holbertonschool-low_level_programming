@@ -1,5 +1,5 @@
 #!/usr/bin env python3
-def islandPerimeter(self, grid):
+def island_perimeter(grid):
     """
     :type grid: List[List[int]]
     :rtype: int
