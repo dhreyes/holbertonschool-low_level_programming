@@ -1,4 +1,4 @@
-#!/usr/bin env python3
+#!/usr/bin/python3
 """
 Determines peremiter of island
 """
@@ -20,4 +20,4 @@ def island_perimeter(grid):
                     edge += 1
                     if j > 0 and grid[i][j-1] == 1:
                         edge += 1
-    return land * 4 - edge * 2
+                        return land * 4 - edge * 2
